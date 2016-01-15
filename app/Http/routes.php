@@ -27,5 +27,14 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    
+	Route::get('charts/pie', [
+		'as' => 'piechart',
+		'uses' => 'PieController@generateChart'
+	]);
+
+	Route::get('async/test/{type}', [
+		'as' => 'asynctest',
+		'uses' => 'ApplicationController@asyncTest'
+	]);
 });
