@@ -17,8 +17,4 @@ class ApplicationController extends Controller
     	$type = $request->input('type');
     	return view('helper.'.$type);
     }
-
-    function teste(Request $request) {
-    	return view('test.test');
-    }
 }

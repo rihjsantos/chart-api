@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PieController extends Controller {
-
-	public function generateChart(Request $request) {
+class LineController extends Controller
+{
+    public function generateChart(Request $request) {
 		$json = $request->input('data');
 
 		if ($this->validateJson($json)) {
-			return view('charts.pie', array(
+			return view('charts.line', array(
 				"data" => $json
 			));
 		} else {
-			
+
 		}
 	}
 

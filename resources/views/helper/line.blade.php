@@ -34,6 +34,12 @@
 	<div class="ct-chart ct-perfect-fourth"></div>
 </div>
 
+<style type="text/css">
+	.ct-label {
+		font-size: 1em;
+	}
+</style>
+
 <script type="text/javascript">
 	var data = {
 		labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

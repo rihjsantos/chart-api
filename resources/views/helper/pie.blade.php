@@ -7,6 +7,7 @@
 	<pre>
 		<code class="html">
 			var data = {
+				labels: ['Bananas', 'Apples', 'Grapes'],
   				series: [5, 3, 4]
 			};
 
@@ -30,20 +31,42 @@
 	<div class="ct-chart ct-perfect-fourth"></div>
 </div>
 
+<style type="text/css">
+	.ct-label {
+		font-size: 1em;
+	}
+</style>
+
 <script type="text/javascript">
 	var data = {
-		series: [5, 3, 4]
+	  labels: ['Bananas', 'Apples', 'Grapes'],
+	  series: [20, 15, 40]
 	};
-	var sum = function(a, b) { return a + b };
 
+	var options = {
+  		labelInterpolationFnc: function(value) {
+    		return value[0]
+  		}
+	};
+
+	var responsiveOptions = [
+	  	['screen and (min-width: 640px)', {
+			chartPadding: 30,
+			labelOffset: 100,
+			labelDirection: 'explode',
+			labelInterpolationFnc: function(value) {
+				return value;
+			}
+	  	}],
+	  	['screen and (min-width: 1024px)', {
+	    	labelOffset: 80,
+	    	chartPadding: 20
+	  	}]
+	];
 
 	$('#spinner').show();
 	setTimeout(function(){
 		$('#spinner').hide();
-		new Chartist.Pie('.ct-chart', data, {
-			labelInterpolationFnc: function(value) {
-    			return Math.round(value / data.series.reduce(sum) * 100) + '%';
-  			}
-		});
+		new Chartist.Pie('.ct-chart', data, options, responsiveOptions);
 	},1000);			
 </script>
