@@ -14,6 +14,8 @@
 						<li class="navbar-item"><a class="navbar-link" href="#" onclick="loadHelper('pie')">Pie chart</a></li>
 						<li class="navbar-item"><a class="navbar-link" href="#" onclick="loadHelper('bar')">Bar chart</a></li>
 						<li class="navbar-item"><a class="navbar-link" href="#" onclick="loadHelper('line')">Line chart</a></li>						
+						<li class="navbar-item"><a class="navbar-link" href="#" onclick="loadHelper('radar')">Radar chart</a></li>						
+						<li class="navbar-item"><a class="navbar-link" href="#" onclick="loadHelper('polar')">Polar Area chart</a></li>
 					</ul>
 				</div>
 			</nav>

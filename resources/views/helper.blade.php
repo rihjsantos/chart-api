@@ -14,4 +14,9 @@
 			});			
 		}
 	</script>
+	<style type="text/css">
+		#chart{
+			min-width: 600px;
+		}
+	</style>
 @endsection

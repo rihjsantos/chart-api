@@ -1,8 +1,7 @@
-<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
 <div id="spinner" style="display: none;"><img src="{{ URL::asset('img/loader.gif') }}" width="25" /></div>
-<div class="ct-chart ct-perfect-fourth"></div>
+<canvas id="chart"></canvas>
 
 <style type="text/css">
 	.ct-label {
@@ -15,7 +14,7 @@
 
 	$('#spinner').show();
 	setTimeout(function(){
-		$('#spinner').hide();
-		new Chartist.Bar('.ct-chart', data);
+		var ctx = document.getElementById("chart").getContext("2d");
+		var myLineChart = new Chart(ctx).Line(data);
 	},1000);			
 </script>
