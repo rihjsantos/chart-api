@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -25,16 +21,22 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+Route::get('charts/pie', [
+	'as' => 'piechart',
+	'uses' => 'PieController@generateChart'
+]);
 
-Route::group(['middleware' => ['web']], function () {
-    
-	Route::get('charts/pie', [
-		'as' => 'piechart',
-		'uses' => 'PieController@generateChart'
-	]);
+Route::get('/', [
+	'as' => 'usage',
+	'uses' => 'ApplicationController@usage'
+]);
 
-	Route::get('async/test/{type}', [
-		'as' => 'asynctest',
-		'uses' => 'ApplicationController@asyncTest'
-	]);
-});
+Route::post('helper', [
+	'as' => 'helper',
+	'uses' => 'ApplicationController@helper'
+]);
+
+Route::post('teste', [
+	'as' => 'teste',
+	'uses' => 'ApplicationController@teste'
+]);

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
-		<script type="text/javascript" src="{{ URL::asset('js/Chart.js') }}"></script>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    	<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 	</head>
 	<body>
 		@yield('content')
-
 	</body>
 </html>
