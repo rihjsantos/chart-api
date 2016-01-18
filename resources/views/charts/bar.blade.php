@@ -10,7 +10,7 @@
 </style>
 
 <script type="text/javascript">
-	var data = {{ $data }}
+	var data = {{{ HTML::decode($data) }}}
 
 	$('#spinner').show();
 	setTimeout(function(){

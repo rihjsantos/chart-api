@@ -20,7 +20,17 @@ Route::get('charts/line', [
 	'uses' => 'LineController@generateChart'
 ]);
 
-Route::get('charts/bar', [
+Route::post('charts/bar', [
 	'as' => 'barchart',
 	'uses' => 'BarController@generateChart'
+]);
+
+Route::get('charts/polar-area', [
+	'as' => 'polar_area',
+	'uses' => 'PolarAreaController@generateChart'
+]);
+
+Route::get('charts/radar', [
+	'as' => 'radar',
+	'uses' => 'RadarController@generateChart'
 ]);
