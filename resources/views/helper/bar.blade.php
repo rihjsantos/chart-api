@@ -23,7 +23,7 @@
 
 			$.ajax({
 				type: 'post',
-				url: 'http://dummy-url.com/charts/bar',
+				url: 'http://this-very-application-url/charts/bar',
 				data: { 'data' : data },
 				success: function(data) {
 					$('#some-div').html(data)

@@ -35,7 +35,7 @@
 
             $.ajax({
                 type: 'post',
-                url: 'http://dummy-url.com/charts/radar',
+                url: 'http://this-very-application-url/charts/polar-area',
                 data: { 'data' : data },
                 success: function(data) {
                     $('#some-div').html(data)
